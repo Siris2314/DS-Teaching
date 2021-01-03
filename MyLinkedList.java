@@ -119,7 +119,20 @@ public class MyLinkedList{
             
         }
 
+        public void reverse(){
+            Node cursor = head;
+            Node previous = null;
+            Node next = null;
 
+            while(cursor != null){
+                next = cursor.next;
+                cursor.next = previous;
+                previous = cursor;
+                cursor = next;
+
+            }
+            head = previous;
+        }
         public boolean find(String name){
 
             Node cursor = head;
