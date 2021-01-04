@@ -129,11 +129,52 @@ public class LinkedListLesson {
     }
 
 
-    public void delete() {
+    public void delete(String name) {
         if(head == null){
             throw new RuntimeException("Empty List");
         }
+        else{
+            Node cursor = head;
+            Node previous = cursor;
+           
+              while(cursor!= null){
+                if(cursor.dishName == name){
+                    previous.next = cursor.next;
+                    if(cursor == head){
+                        head = cursor.next;
+                        // cursor = previous;
+                    }
+                    
+                } 
+                else{
+                    previous = cursor;
+                    
+
+                }
+                cursor = cursor.next; 
+            }
         
+
+        }
+        
+    }
+
+
+    public static void main(String[] args) {
+        LinkedListLesson check = new LinkedListLesson();
+        
+        check.add("Pizza", 60,10);
+        check.add("Pizza", 50, 10);
+        check.add("Pizza", 40,9);
+        check.add("Crepe", 10, 5);
+        check.add("Ice Cream", 55, 100);
+        check.add("Pizza", 20, 7);
+        check.add("Pizza", 30,8);
+        check.print();
+        check.delete("Pizza");
+        System.out.println("==============");
+        check.print();
+
     }
 
 
