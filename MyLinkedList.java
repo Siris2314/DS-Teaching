@@ -93,24 +93,26 @@ public class MyLinkedList{
             if(head == null){
                 System.out.println("List is empty");
             }
-            else{
-                if(head.name == name){
-                    head = head.next;
-                }
+           
+              
                 else{
                 Node cursor = head;
                 Node previous = cursor;
                 while(cursor != null){
                     if(cursor.name == name){
                         previous.next = cursor.next;
-                        break;
+                        
+                        if(cursor == head){
+                            head = cursor.next;
+                        }
                     } 
                     else{
                         previous = cursor;
-                        cursor = cursor.next;
+                        
                     }
+                    cursor = cursor.next;
                 }
-            }
+            
            }
     
 

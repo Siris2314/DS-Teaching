@@ -70,7 +70,7 @@ public class MyQueue{
     }
 
     public static void main(String[] args) {
-        MyStacks check = new MyStacks();
+        MyQueue check = new MyQueue();
         // check.push("John", 30);
         // check.push("Chess", 40);
         // check.push("Zed", 50);
