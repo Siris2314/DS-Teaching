@@ -90,7 +90,7 @@ public class LinkedListLesson {
      
          
              
-     
+
      
      
          }
@@ -188,6 +188,7 @@ public class LinkedListLesson {
         System.out.println("==============");
         check.print();
         check.add("Pizza", 30,8, 0);
+        check.add("Pizza", 30, 8, -2);
         check.print();
 
     }
