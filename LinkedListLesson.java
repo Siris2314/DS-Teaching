@@ -39,50 +39,63 @@ public class LinkedListLesson {
 
     public void add(String dn, int dp, int dr, int position){
 
-       int counter = 0;
-        Node node = new Node(dn, dp, dr);
-
-        if(head == null){
-
-            head = node;
         
-        } 
 
-        Node cursor = head;
-        boolean valid = false;
-        Node previous = cursor;
-
-        while(cursor != null){
-            
-            previous = cursor;
-            cursor = cursor.next;
-
-            if(position >= counter){
-
-                valid = true;
-                break;
-
+            int counter = 0;
+            Node node = new Node(dn, dp, dr);
+     
+            if(position < 0 ){
+                throw new RuntimeException("Invalid Index");
             }
+     
+             if(head == null){
+                 head = node;
+                 return;
+             }
+             if(position == 0)
+             {
+                 node.next = head;
+                 head = node;
+                 return;
+             }
+     
+             Node cursor = head;
+             boolean valid = false;
+             Node previous = cursor;
+     
+             while(cursor != null) {
+                 
+     
+                 previous = cursor;
+                 cursor = cursor.next;
+                 counter++;
+     
+                
+                 if(counter >= position){
+     
+                     valid = true;
+                     break;
+     
+                 
+                 }
+                           
+             }
+             if(valid){
+                 previous.next = node;
+                 node.next = cursor;
+     
+             } else {
+                 previous.next = node;
+             }
+     
+         
+             
+     
+     
+     
+         }
 
-            counter++;
-
-
-        }
-        if(valid == true){
-            previous.next = node;
-            node.next = cursor.next;
-
-
-        } else {
-            cursor.next = node.next;
-        }
-
-    
-        
-
-
-
-    }
+       
 
     public void print(){
 
@@ -163,16 +176,18 @@ public class LinkedListLesson {
     public static void main(String[] args) {
         LinkedListLesson check = new LinkedListLesson();
         
-        check.add("Pizza", 60,10);
-        check.add("Pizza", 50, 10);
-        check.add("Pizza", 40,9);
+        // check.add("Pizza", 60,10);
+        // check.add("Pizza", 50, 10);
+        // check.add("Pizza", 40,9);
         check.add("Crepe", 10, 5);
         check.add("Ice Cream", 55, 100);
         check.add("Pizza", 20, 7);
         check.add("Pizza", 30,8);
         check.print();
-        check.delete("Pizza");
+
         System.out.println("==============");
+        check.print();
+        check.add("Pizza", 30,8, 0);
         check.print();
 
     }
