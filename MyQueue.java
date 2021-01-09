@@ -68,13 +68,12 @@ public class MyQueue{
             throw new RuntimeException("Empty Stack");
         }
     }
-
     public static void main(String[] args) {
         MyQueue check = new MyQueue();
-        // check.push("John", 30);
+        check.enqueue("John", 30);
         // check.push("Chess", 40);
         // check.push("Zed", 50);
-        // check.print();
+        check.print();
         // System.out.println("==============================");
         // check.pop();
         // check.pop();
