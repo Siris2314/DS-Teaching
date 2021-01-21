@@ -99,6 +99,7 @@ public class CalculatorLinked {
             Node cursor = head;
           while(cursor != null){
             if(name.equalsIgnoreCase(cursor.name)){
+
                 cursor.percent = percent;
                 cursor.weight = weight;
                 break;
@@ -156,7 +157,6 @@ public class CalculatorLinked {
 
 
     if(options == 1){           
-        Scanner start = new Scanner(System.in);
         System.out.println("Assignment Adder:Would you like to add an assignment?");
         String checkmore = start.nextLine();
         Scanner check = new Scanner(System.in);
@@ -164,15 +164,17 @@ public class CalculatorLinked {
 
        while(checkmore.equalsIgnoreCase("YES")){
 
+        Scanner start2 = new Scanner(System.in);
+
+    
         System.out.println("Please enter the name of the assignment");
-        String checker1 = start.nextLine();
-        start.nextLine();
-        System.out.print("Loading up Calculator......");
+        String checker1 = start2.nextLine();
+        
         System.out.println("\nPlease enter the grade you received on said assignment");
-        double checker2 = start.nextDouble();
+        double checker2 = start2.nextDouble();
         
         System.out.println("Please enter the weight percentage of the said assignment");
-        double checker3 = start.nextDouble();
+        double checker3 = start2.nextDouble();
         checker.add(checker1, checker2, checker3);
 
         
@@ -183,6 +185,7 @@ public class CalculatorLinked {
              break;
          }else{
             checkmore = "YES";
+            
          }
 
         }
@@ -201,11 +204,11 @@ public class CalculatorLinked {
      System.out.println("Assignment Deleter, would you like to delete an assignment?");
      String deleter = del.nextLine();
 
-     Scanner delinput = new Scanner(System.in);
 
 
      while(deleter.equalsIgnoreCase("YES")){
-
+        
+        Scanner delinput = new Scanner(System.in);
         System.out.println("Please State the Name of the assignment you want to delete");
         String name = delinput.nextLine();
         checker.delete(name);
