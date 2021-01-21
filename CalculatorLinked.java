@@ -75,7 +75,7 @@ public class CalculatorLinked {
             Node previous = cursor;
             while(cursor != null){
 
-              if(cursor.name == name){
+              if(name.equalsIgnoreCase(cursor.name)){
 
                 if(cursor == head){
                     head = cursor.next;
@@ -98,8 +98,7 @@ public class CalculatorLinked {
         } else{
             Node cursor = head;
           while(cursor != null){
-            if(cursor.name == name){
-
+            if(name.equalsIgnoreCase(cursor.name)){
                 cursor.percent = percent;
                 cursor.weight = weight;
                 break;
